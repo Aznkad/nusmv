@@ -2462,8 +2462,9 @@ This is either this buffer's process or this buffer output buffer's process."
     (define-key nusmv-mode-map "\C-c;"  'comment-region)
     (define-key nusmv-mode-map "\C-c:"  'nusmv-uncomment-region)
 
-    (modify-frame-parameters (selected-frame)
-                              '((menu-bar-lines . 2)))
+    (if menu-bar-mode
+        (modify-frame-parameters (selected-frame)
+                                 '((menu-bar-lines . 2))))
 
      ;; Make a menu keymap (with a prompt string)
      ;; and make it the menu bar item's definition.
