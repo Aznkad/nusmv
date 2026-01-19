@@ -2628,8 +2628,9 @@ Please send bugs and suggestions to <villemaire.roger@uqam.ca>."
   ;; Define the major mode
   (setq major-mode 'nusmv-mode)
   (setq mode-name "NuSMV")
-  
-  (run-hooks 'nusmv-mode-hook))
+
+  (font-lock-mode) ; Enable syntax highlighting
+  (run-hooks 'nusmv-mode-hook 'prog-mode-hook)) ; Also run prog-mode-hook so that everything that applies to other programming modes applies here
 
 
 (defun nusmv-m4-mode ()
